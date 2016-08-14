@@ -76,7 +76,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -108,6 +108,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -300,7 +307,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。<br>+
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。<br>
           
       
     </div>

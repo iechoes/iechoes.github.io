@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。+">
+<meta name="description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+GitHub同步托管到coding上的方法">
 <meta property="og:url" content="http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/index.html">
 <meta property="og:site_name" content="余舟唱晚">
-<meta property="og:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。+">
-<meta property="og:updated_time" content="2016-08-14T13:24:27.980Z">
+<meta property="og:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。">
+<meta property="og:updated_time" content="2016-08-14T13:31:15.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+GitHub同步托管到coding上的方法">
-<meta name="twitter:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。+">
+<meta name="twitter:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -72,7 +72,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -104,6 +104,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -296,7 +303,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。<br>+<a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。<br><a id="more"></a></p>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h3 id="1、注册、登录CODING账号。这画风我喜欢-。"><a href="#1、注册、登录CODING账号。这画风我喜欢-。" class="headerlink" title="1、注册、登录CODING账号。这画风我喜欢^_^。"></a>1、注册、登录CODING账号。这画风我喜欢^_^。</h3><h3 id="2、新建一个项目"><a href="#2、新建一个项目" class="headerlink" title="2、新建一个项目"></a>2、新建一个项目</h3><p>点击完“添加项目”完之后，填写项目名称和项目描述，完成之后点击“创建项目”。</p>
 <h3 id="3、SSH公钥配置"><a href="#3、SSH公钥配置" class="headerlink" title="3、SSH公钥配置"></a>3、SSH公钥配置</h3><p>这里的公钥就是之前配置到GitHub里面的公钥，我们直接将.ssh文件夹中的id_rsa.pub文件中数据全选，复制就好。然后coding页面中，点击“账户—&gt;SSH公钥”，粘贴刚刚复制的公钥，然后点击“添加”即可。</p>
 <h3 id="4、-config-yml配置"><a href="#4、-config-yml配置" class="headerlink" title="4、_config.yml配置"></a>4、_config.yml配置</h3><p>想要同时部署到两个平台，就要修改博客根目录E:\Hexo下面的_config.yml文件内容，我们只需要修改deploy下面的内容就好了，将原来的内容修改为一下形式：</p>
@@ -323,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2016/08/14/Hexo+GitHub同步托管到coding上的方法/">Hexo+GitHub同步托管到coding上的方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">余舟唱晚</a></p>
         <p><span>发布时间:</span>2016-08-14, 20:09:48</p>
-        <p><span>最后更新:</span>2016-08-14, 21:24:27</p>
+        <p><span>最后更新:</span>2016-08-14, 21:31:15</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/14/Hexo+GitHub同步托管到coding上的方法/" title="Hexo+GitHub同步托管到coding上的方法">http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/　　作者: 余舟唱晚" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
