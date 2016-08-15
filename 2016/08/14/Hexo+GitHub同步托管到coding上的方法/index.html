@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/index.html">
 <meta property="og:site_name" content="余舟唱晚">
 <meta property="og:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。">
-<meta property="og:updated_time" content="2016-08-14T13:31:15.432Z">
+<meta property="og:updated_time" content="2016-08-15T00:31:22.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+GitHub同步托管到coding上的方法">
 <meta name="twitter:description" content="前言之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。">
@@ -192,7 +192,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-coding/">Hexo; coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li></ul>
                     </div>
                 </section>
                 
@@ -301,7 +301,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-coding/">Hexo; coding</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,19 +312,18 @@
       
           
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前我们已经将hexo托管到GitHub上去了，但是毕竟是国外的。访问速度很慢，因此，我就想也部署到国内的托管平台。其中，coding是很好的一个选择。看过很多人写的博客，自己就总结一下部署的方法，该方法可以在本地一次更新后，同时更新到GitHub和coding上，话不多说看干货。<br><a id="more"></a></p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h3 id="1、注册、登录CODING账号。这画风我喜欢-。"><a href="#1、注册、登录CODING账号。这画风我喜欢-。" class="headerlink" title="1、注册、登录CODING账号。这画风我喜欢^_^。"></a>1、注册、登录CODING账号。这画风我喜欢^_^。</h3><h3 id="2、新建一个项目"><a href="#2、新建一个项目" class="headerlink" title="2、新建一个项目"></a>2、新建一个项目</h3><p>点击完“添加项目”完之后，填写项目名称和项目描述，完成之后点击“创建项目”。</p>
-<h3 id="3、SSH公钥配置"><a href="#3、SSH公钥配置" class="headerlink" title="3、SSH公钥配置"></a>3、SSH公钥配置</h3><p>这里的公钥就是之前配置到GitHub里面的公钥，我们直接将.ssh文件夹中的id_rsa.pub文件中数据全选，复制就好。然后coding页面中，点击“账户—&gt;SSH公钥”，粘贴刚刚复制的公钥，然后点击“添加”即可。</p>
-<h3 id="4、-config-yml配置"><a href="#4、-config-yml配置" class="headerlink" title="4、_config.yml配置"></a>4、_config.yml配置</h3><p>想要同时部署到两个平台，就要修改博客根目录E:\Hexo下面的_config.yml文件内容，我们只需要修改deploy下面的内容就好了，将原来的内容修改为一下形式：</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h3 id="注册、登录CODING账号。这画风我喜欢-。"><a href="#注册、登录CODING账号。这画风我喜欢-。" class="headerlink" title="注册、登录CODING账号。这画风我喜欢^_^。"></a>注册、登录CODING账号。这画风我喜欢^_^。</h3><h3 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h3><p>点击完“添加项目”完之后，填写项目名称和项目描述，完成之后点击“创建项目”。</p>
+<h3 id="SSH公钥配置"><a href="#SSH公钥配置" class="headerlink" title="SSH公钥配置"></a>SSH公钥配置</h3><p>这里的公钥就是之前配置到GitHub里面的公钥，我们直接将.ssh文件夹中的id_rsa.pub文件中数据全选，复制就好。然后coding页面中，点击“账户—&gt;SSH公钥”，粘贴刚刚复制的公钥，然后点击“添加”即可。</p>
+<h3 id="config-yml配置"><a href="#config-yml配置" class="headerlink" title="_config.yml配置"></a>_config.yml配置</h3><p>想要同时部署到两个平台，就要修改博客根目录E:\Hexo下面的_config.yml文件内容，我们只需要修改deploy下面的内容就好了，将原来的内容修改为一下形式：</p>
 <p>关于coding：后面的访问地址，我们只需要选中刚才所创建的项目，然后点击“代码”，在页面的左下方选中“SSH”，然后直接复制该地址就行了。</p>
 <p>添加完之后，在git bash命令窗口输入以下指令：</p>
 <p><code>ssh -T git@git.coding.net</code></p>
 <p>提示输入（yes/no）？，输入yes，完工。</p>
-<h3 id="5、同步本地Hexo到coding上"><a href="#5、同步本地Hexo到coding上" class="headerlink" title="5、同步本地Hexo到coding上"></a>5、同步本地Hexo到coding上</h3><p>It’s easy! 一条指令的干活。</p>
+<h3 id="同步本地Hexo到coding上"><a href="#同步本地Hexo到coding上" class="headerlink" title="同步本地Hexo到coding上"></a>同步本地Hexo到coding上</h3><p>It’s easy! 一条指令的干活。</p>
 <p><code>hexo depoly -g</code></p>
 <p>红色框框的内容便是我们同步到coding上的内容了。<br>怎么还没到啊，宝宝等不及啦！心急吃不了热馍馍。最后一步！！！</p>
-<h3 id="6、pages服务方式部署"><a href="#6、pages服务方式部署" class="headerlink" title="6、pages服务方式部署"></a>6、pages服务方式部署</h3><p>部署博客这里我们采用pages服务的方式，因为可以绑定域名。（虽然我还没有域名-_-!）pages方式也很简单，就是在source文件夹下创建一个空白文件，因为coding.net需要这个文件夹作为以静态文件部署的标志。看到这个Staticfile就知道按照静态文件来发布。具体操作看下面指令：</p>
-<p><code>cd source</code></p>
-<p><code>touch Staticfile  #名字必须是Staticfile</code></p>
+<h3 id="pages服务方式部署"><a href="#pages服务方式部署" class="headerlink" title="pages服务方式部署"></a>pages服务方式部署</h3><p>部署博客这里我们采用pages服务的方式，因为可以绑定域名。（虽然我还没有域名-_-!）pages方式也很简单，就是在source文件夹下创建一个空白文件，因为coding.net需要这个文件夹作为以静态文件部署的标志。看到这个Staticfile就知道按照静态文件来发布。具体操作看下面指令：</p>
+<p><code>cd source</code><br><code>touch Staticfile  #名字必须是Staticfile</code></p>
 <p>在本项目中，选中“代码–&gt;Pages服务”，在部署分支中填写master，因为在配置文件中我们写的master，然后点击“立即开启”，收工！</p>
 <p>接下里你就可以访问自己的博客了。访问地址为<code>xxx.coding.me</code>。<br> 注意：如果你的项目名称跟你的coding的用户名一致时，例如：我的coding用户名为iechoes，同时，我的博客项目名称也是iechoes。那么直接访问<code>iechoes.coding.me</code>就可以访问博客了。否则就需要带上项目名称名才能访问，即：<code>iechoes.coding.me/项目名称</code><br>推荐第一种方式哦，这样可以偷懒。嘻嘻。</p>
 
@@ -338,7 +337,7 @@
         <p><span>本文标题:</span><a href="/2016/08/14/Hexo+GitHub同步托管到coding上的方法/">Hexo+GitHub同步托管到coding上的方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">余舟唱晚</a></p>
         <p><span>发布时间:</span>2016-08-14, 20:09:48</p>
-        <p><span>最后更新:</span>2016-08-14, 21:31:15</p>
+        <p><span>最后更新:</span>2016-08-15, 08:31:22</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/14/Hexo+GitHub同步托管到coding上的方法/" title="Hexo+GitHub同步托管到coding上的方法">http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/14/Hexo+GitHub同步托管到coding上的方法/　　作者: 余舟唱晚" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -368,7 +367,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、注册、登录CODING账号。这画风我喜欢-。"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、注册、登录CODING账号。这画风我喜欢^_^。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、新建一个项目"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、新建一个项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、SSH公钥配置"><span class="toc-number">2.0.3.</span> <span class="toc-text">3、SSH公钥配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、-config-yml配置"><span class="toc-number">2.0.4.</span> <span class="toc-text">4、_config.yml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、同步本地Hexo到coding上"><span class="toc-number">2.0.5.</span> <span class="toc-text">5、同步本地Hexo到coding上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、pages服务方式部署"><span class="toc-number">2.0.6.</span> <span class="toc-text">6、pages服务方式部署</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注册、登录CODING账号。这画风我喜欢-。"><span class="toc-number">2.0.1.</span> <span class="toc-text">注册、登录CODING账号。这画风我喜欢^_^。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个项目"><span class="toc-number">2.0.2.</span> <span class="toc-text">新建一个项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH公钥配置"><span class="toc-number">2.0.3.</span> <span class="toc-text">SSH公钥配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#config-yml配置"><span class="toc-number">2.0.4.</span> <span class="toc-text">_config.yml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步本地Hexo到coding上"><span class="toc-number">2.0.5.</span> <span class="toc-text">同步本地Hexo到coding上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pages服务方式部署"><span class="toc-number">2.0.6.</span> <span class="toc-text">pages服务方式部署</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
