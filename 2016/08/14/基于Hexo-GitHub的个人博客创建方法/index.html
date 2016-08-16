@@ -50,7 +50,7 @@ Node.js：用来创建hexo博客的框架">
 <meta property="og:image" content="http://oby863yl6.bkt.clouddn.com/building_21.png">
 <meta property="og:image" content="http://oby863yl6.bkt.clouddn.com/building_22.png">
 <meta property="og:image" content="http://oby863yl6.bkt.clouddn.com/building_23.png">
-<meta property="og:updated_time" content="2016-08-16T00:51:14.812Z">
+<meta property="og:updated_time" content="2016-08-16T00:54:44.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Hexo+GitHub的个人博客创建方法">
 <meta name="twitter:description" content="系统环境首先我们来关注一下博客搭建所需要的系统环境：Git和Node.js。其中，
@@ -366,8 +366,11 @@ Node.js：用来创建hexo博客的框架">
 <li>创建repository<br>Repository相当于一个仓库，用来放置你的代码文件。首先登陆GitHub，并进入个人主页，然后创建一个repository。创建时，只需要在Repository name处填写即可。当然这个名字必须为yourname.github.io(如：ieachoes.github.io)，然后点击“Create repository”即可。<br><img src="http://oby863yl6.bkt.clouddn.com/building_8.png" alt=""></li>
 <li>部署SSH<br>既然repository已经创建好了，当然是先把博客放到GitHub上面看看咯。编辑E:\Hexo下的_config.yml文件。在该文件的最下方，添加如下配置并保存。<br><img src="http://oby863yl6.bkt.clouddn.com/building_9.png" alt=""><br>注意：每一个：之后都要添加一个空格，repository：之后为之前创建的repository链接。如果是第一次使用GitHub或者已经使用过了，但是没有配置过SSH，则接下来需要先配置一下，在Git Bash输入指令：<br><code>ls –al ~/.ssh</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_10.png" alt=""><br>如果不存在.ssh文件夹就没有关系，如果存在的话，直接删除.ssh文件夹中的所有文件。以下是.ssh文件夹中的文件。<br><img src="http://oby863yl6.bkt.clouddn.com/building_11.png" alt=""><br>输入以下指令（邮箱是当初你注册GitHub时候的邮箱），回车，出现提示让你输入的时候直接先回车，需要三次。<br><code>ssh-keygen –t rsa –C “xxxx@163.com”</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_12.png" alt=""><br>然后输入以下指令：<br><code>ssh-agent –s</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_13.png" alt=""><br>继续输入指令:<br><code>ssh-add  ~/.ssh/id_rsa</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_14.png" alt=""><br>哎呀！出错了。如果你也出错了，莫方，分别输入以下指令：<br>  eval <code>ssh-agent –s</code><br>  ssh-add<br><img src="http://oby863yl6.bkt.clouddn.com/building_15.png" alt=""><br>到了这一步，你就离曙光不远啦！现在可以添加SSH  Key到你的GitHub账户中去了。直接进入.ssh文件夹目录：C:\Users\Administrator.ssh，使用记事本打开id_rsa.pub文件，将该文件中的内容进行复制,然后到GitHub里面，点击右上角的设置图标Settings。<br><img src="http://oby863yl6.bkt.clouddn.com/building_16.png" alt=""><br>找到SSH and GPG Keys，然后点击New SSH Key，Title里面可以随便写，Key里面填写的就是刚才在id_rsa.pub中拷贝的内容，然后点击Add SSH Key。<br><img src="http://oby863yl6.bkt.clouddn.com/building_17.png" alt=""><br><img src="http://oby863yl6.bkt.clouddn.com/building_18.png" alt=""><br>最后我们还是测试一下吧！输入以下指令：<br><code>ssh -T git@github.com</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_19.png" alt=""><br>你会看到一个警告，不过没关系，输入yes就好啦！^_^Y至此部署到GitHub就已经完工啦！</li>
 <li>Hexo部署<br>由于使用Git部署，在部署网站之前需安装hexo-deployer-git，只需要在hexo目录下执行以下指令：<br><code>npm install hexo-deployer-git –-save</code><br><img src="http://oby863yl6.bkt.clouddn.com/building_20.png" alt=""><br>安装好之后，执行以下指令就可以完成Hexo部署啦，有木有点小激动！！<br><code>hexo d</code><br>至此，恭喜你顺利完成部署Hexo，接下来你就可以登陆yourname.github.io查看你的网站啦。<br><img src="http://oby863yl6.bkt.clouddn.com/building_21.png" alt=""></li>
-<li>配置本地用户和邮箱<br>用户名邮箱的作用：我们需要设置一个用户名和邮箱，这是用来上传本地仓库到GitHub中，在GitHub中显示代码上传者，使用如下指令进行配置：<br>  git config –global user.name “iechoes”<br>  git config –global user.email “xxxx@163.com”<br><img src="http://oby863yl6.bkt.clouddn.com/building_22.png" alt=""><br>到这里Git客户端已安装及GitHub配置完成，现在可以从GitHub传输代码了。</li>
+<li><p>配置本地用户和邮箱<br>用户名邮箱的作用：我们需要设置一个用户名和邮箱，这是用来上传本地仓库到GitHub中，在GitHub中显示代码上传者，使用如下指令进行配置：</p>
+<p>  git config –global user.name “iechoes”<br>  git config –global user.email “xxxx@163.com”</p>
+</li>
 </ul>
+<p><img src="http://oby863yl6.bkt.clouddn.com/building_22.png" alt=""><br>到这里Git客户端已安装及GitHub配置完成，现在可以从GitHub传输代码了。</p>
 <h1 id="博文的撰写"><a href="#博文的撰写" class="headerlink" title="博文的撰写"></a>博文的撰写</h1><ul>
 <li>在Git Bash命令窗口执行以下命令，new后面为博文文件的文件名，不一定是博文的标题:<br><code>hexo new helloworld</code></li>
 <li>在E:\Hexo\source_post中打开helloworld.md，打开方式使用记事本或者其他工具。Hexo中写文章使用的事Markdown，这里推荐一种工具，markdownpad，Markdown编写语法可以百度一下。需要注意的是，在直接将文件放入目录中时，请在markdown文件内容前加上以下内容，以帮助解析。<br>  title: xxx  # 后面接标题<br>  date: xxxx-xx-xx  # 发表日期，一般不改动<br>  categories: xx  # 文章文类<br>  tags: [xx, xx, xx]  # 文章标签，多于一项时用tags: blog<br>以下书写正文。<br>关于博文的编写工具，在这里我推荐用MarkdownPad进行书写（直接点击链接便可以下载，下载时选择免费的）。<br><img src="http://oby863yl6.bkt.clouddn.com/building_23.png" alt=""><br>但是在Win10系统下面，该软件不能顺利使用。别方，这是因为升级到Win10系统之后，MarkdownPad2遇到html渲染错误的问题。此时Win10系统需要下载一个<a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" target="_blank" rel="external">awesomium_v1.6.6_sdk_win</a>。下载安装后正常渲染。</li>
@@ -385,7 +388,7 @@ Node.js：用来创建hexo博客的框架">
         <p><span>本文标题:</span><a href="/2016/08/14/基于Hexo-GitHub的个人博客创建方法/">基于Hexo+GitHub的个人博客创建方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">余舟唱晚</a></p>
         <p><span>发布时间:</span>2016-08-14, 20:59:10</p>
-        <p><span>最后更新:</span>2016-08-16, 08:51:14</p>
+        <p><span>最后更新:</span>2016-08-16, 08:54:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/14/基于Hexo-GitHub的个人博客创建方法/" title="基于Hexo+GitHub的个人博客创建方法">http://yoursite.com/2016/08/14/基于Hexo-GitHub的个人博客创建方法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/14/基于Hexo-GitHub的个人博客创建方法/　　作者: 余舟唱晚" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
